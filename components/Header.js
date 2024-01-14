@@ -6,7 +6,7 @@ const Index = () => {
             <nav className="flex h-[72px] items-center w-[80%] justify-between" aria-label="Global">
                 <div className="flex">
                     <div className=" mr-[32px] w-[154px] h-[44px]">
-                        <img src="/assets/icons/mainlogo.svg" alt="LOGO" />
+                        <img src="/assets/icons/mainLogo.svg" alt="LOGO" />
                     </div>
                     <div className="flex gap-x-1">
                         <div className="relative p-[8px]">
