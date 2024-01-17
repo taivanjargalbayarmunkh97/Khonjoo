@@ -1,13 +1,14 @@
 'use client';
 import Link from 'next/link';
 import route from '@/route/index';
+import Image from 'next/image';
 const Index = () => {
     return (
         <header className="bg-[#ffffff] w-[100%] fixed z-[99] flex items-center justify-center">
             <nav className="flex h-[72px] items-center w-[80%] justify-between" aria-label="Global">
                 <div className="flex">
                     <div className=" mr-[32px] w-[154px] h-[44px]">
-                        <img src="/assets/icons/mainLogo.svg" alt="LOGO" />
+                        <img src="/assets/icons/mainLogo.svg" alt="LOGO" width={154} />
                     </div>
                     <div className="flex gap-x-1">
                         <div className="p-[8px]">

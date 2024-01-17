@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const Index = ({ imageUrl }) => {
     return (
         <div className="mt-[73px] w-[100%]">

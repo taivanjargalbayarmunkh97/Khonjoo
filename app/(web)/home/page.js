@@ -7,7 +7,7 @@ import Works from '@/module/home/template/works';
 import Blogs from '@/module/home/template/blogs';
 import Hero from '@/components/Hero';
 
-const Home = () => {
+const News = () => {
     return (
         <>
             <Hero imageUrl={'/assets/photo/Hero.png'} />
@@ -25,4 +25,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default News;

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const Index = () => {
     return (
         <div className="w-[100%] bg-[#050514] h-[322px] z-10 flex flex-col justify-between items-center max-md:h-[100%]">

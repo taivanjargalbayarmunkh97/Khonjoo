@@ -1,5 +1,6 @@
 'use client';
 import { Inter } from 'next/font/google';
+import Image from 'next/image';
 const inter = Inter({ subsets: ['latin'] });
 const Index = () => {
     let arr = [0, 1, 2];
