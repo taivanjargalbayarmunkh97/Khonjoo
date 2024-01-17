@@ -1,5 +1,7 @@
 export default {
     home: '/home', // home page
-    signIn: 'auth/signIn',
-    signUp: '/signUp',
+    campaigns: '/campaigns',
+    news: '/news',
+    signIn: 'auth/signIn', //Нэвтрэх
+    signUp: '/signUp', //бүртгүүлэх
 };

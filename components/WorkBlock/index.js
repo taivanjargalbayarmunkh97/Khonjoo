@@ -2,7 +2,7 @@
 import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
-const Index = () => {
+const Index = ({ campaigns }) => {
     return (
         <div className="h-[330px]">
             <div className="mb-[20px] w-[100%] h-[63%]">
@@ -18,7 +18,7 @@ const Index = () => {
                 </div>
                 <div className="h-[20px] flex justify-between">
                     <p className="text-[16px] font-[600] leading-[20px] tracking-[-0.32px] text-[#222]">UnAwkward</p>
-                    <img src="/assets/icons/arrow-up-right.svg" alt="arrow" />
+                    {campaigns ? '' : <img src="/assets/icons/arrow-up-right.svg" alt="arrow" />}
                 </div>
             </div>
         </div>

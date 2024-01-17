@@ -10,37 +10,42 @@ const Index = () => {
                         <img src="/assets/icons/mainLogo.svg" alt="LOGO" />
                     </div>
                     <div className="flex gap-x-1">
-                        <div className="relative p-[8px]">
-                            <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
+                        <div className="p-[8px]">
+                            <Link href={route.campaigns} className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Campaigns
                             </Link>
                         </div>
-                        <div className="relative p-[8px]">
+                        <div className="p-[8px]">
+                            <Link href={route.news} className="text-[#050514] text-[15px] font-[500] leading-[24px]">
+                                News
+                            </Link>
+                        </div>
+                        <div className="p-[8px]">
                             <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Agencies
                             </Link>
                         </div>
-                        <div className="relative p-[8px]">
+                        <div className="p-[8px]">
                             <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Channels
                             </Link>
                         </div>
-                        <div className="relative p-[8px]">
+                        <div className="p-[8px]">
                             <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Influencers
                             </Link>
                         </div>
-                        <div className="relative p-[8px]">
+                        <div className="p-[8px]">
                             <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Resources
                             </Link>
                         </div>
-                        <div className="relative p-[8px]">
+                        <div className="p-[8px]">
                             <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Events
                             </Link>
                         </div>
-                        <div className="relative p-[8px]">
+                        <div className="p-[8px]">
                             <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Marketers
                             </Link>

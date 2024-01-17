@@ -1,4 +1,4 @@
-import WorkBlock from '@/components/workBlock';
+import WorkBlock from '@/components/WorkBlock/index';
 const Index = () => {
     let arr = [0, 1, 2, 3];
     return (
@@ -14,7 +14,7 @@ const Index = () => {
             <div className="flex gap-[32px] max-lg:flex-wrap max-lg:justify-center">
                 {arr?.map((i) => {
                     return (
-                        <div className="w-[25%] shadow-xl max-lg:w-[40%] max-sm:w-[100%] max-sm:px-[16px]" key={i}>
+                        <div className="w-[25%] shadow-xl max-lg:w-[45%] max-sm:w-[100%] max-sm:px-[16px]" key={i}>
                             <WorkBlock />
                         </div>
                     );

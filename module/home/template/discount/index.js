@@ -5,7 +5,7 @@ const Index = () => {
     let arr = [0, 1, 2];
 
     return (
-        <div className=" flex gap-[32px] max-md:flex-col">
+        <div className="flex gap-[32px] max-md:flex-col">
             {arr?.map((i) => {
                 return (
                     <div className="w-[33%] h-[288px] flex justify-center max-md:w-[100%] relative" key={i}>
