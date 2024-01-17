@@ -56,7 +56,7 @@ const Index = () => {
                 <div className="flex flex-wrap w-[100%] gap-x-[32px] gap-y-[40px] mt-[40px]">
                     {arr?.map((i) => {
                         return (
-                            <div className="w-[31.42%] shadow-md hover:shadow-xl">
+                            <div className="w-[31.42%] shadow-md hover:shadow-xl" key={i}>
                                 <BlogBlock />
                             </div>
                         );
