@@ -1,6 +1,5 @@
 import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Wrapper from '@/app/rootWrapper';
 
 export default function RootLayout({ children }) {
     return (
@@ -9,9 +8,7 @@ export default function RootLayout({ children }) {
             <title>Alluneed Marketing</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <body>
-                <Header />
-                {children}
-                {/* <Footer /> */}
+                <Wrapper>{children}</Wrapper>
             </body>
         </html>
     );

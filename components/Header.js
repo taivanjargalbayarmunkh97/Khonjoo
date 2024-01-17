@@ -1,8 +1,9 @@
 'use client';
 import Link from 'next/link';
+import route from '@/route/index';
 const Index = () => {
     return (
-        <header className="bg-[#ffffff] w-[100%]  fixed z-[99] flex items-center justify-center">
+        <header className="bg-[#ffffff] w-[100%] fixed z-[99] flex items-center justify-center">
             <nav className="flex h-[72px] items-center w-[80%] justify-between" aria-label="Global">
                 <div className="flex">
                     <div className=" mr-[32px] w-[154px] h-[44px]">
@@ -58,7 +59,7 @@ const Index = () => {
                         </button>
                     </div>
                     <div className="px-[16px] py-[10px] bg-[#FD3D80] h-[40px]">
-                        <a href="#" className="text-[14px] text-[#FFFFFF] font-[600] leading-[20px]">
+                        <a href={route.signIn} className="text-[14px] text-[#FFFFFF] font-[600] leading-[20px]">
                             Бүртгүүлэх
                         </a>
                     </div>

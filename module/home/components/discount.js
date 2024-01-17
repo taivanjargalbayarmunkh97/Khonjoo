@@ -5,10 +5,10 @@ const Index = () => {
     let arr = [0, 1, 2];
 
     return (
-        <div className="relative flex gap-[32px]">
+        <div className=" flex gap-[32px] max-md:flex-col">
             {arr?.map((i) => {
                 return (
-                    <div className="w-[33%] h-[288px] flex justify-center" key={i}>
+                    <div className="w-[33%] h-[288px] flex justify-center max-md:w-[100%] relative" key={i}>
                         <img src="assets/photo/image3.png" alt="discount" />
                         <div className="absolute flex justify-center top-[28%] flex-col items-center">
                             <div className="py-[6px] px-[12px] rounded-[40px] bg-[#8557F4CC]  w-[113px] h-[32px]">

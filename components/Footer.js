@@ -1,7 +1,27 @@
 const Index = () => {
     return (
-        <div className="w-[100%] h-[322px] bg-[#050514]">
-            <img src="/assets/icons/mainLogo.svg" alt="logo" />
+        <div className="w-[100%] bg-[#050514] h-[322px] z-10 flex flex-col justify-between items-center">
+            <div className="my-[64px] flex flex-col gap-[32px]">
+                <div className="flex justify-center">
+                    <img src="/assets/photo/mainLogoWhite.png" alt="logo" />
+                </div>
+                <ul className="flex justify-evenly gap-[32px]">
+                    <li className="text-[#EAECF0]">Танилцуулга</li>
+                    <li className="text-[#EAECF0]">Боломжууд</li>
+                    <li className="text-[#EAECF0]">Үнийн санал</li>
+                    <li className="text-[#EAECF0]">Ажлын байр</li>
+                    <li className="text-[#EAECF0]">Тусламж</li>
+                    <li className="text-[#EAECF0]">Нууцлал</li>
+                </ul>
+            </div>
+            <div className="flex justify-around w-[100%]">
+                <div className="text-[#EAECF0]">Бүх эрх хуулиар хамгаалагдсан © 2077.</div>
+                <ul className="flex  gap-[16px]">
+                    <li className="text-[#EAECF0]">Журмууд</li>
+                    <li className="text-[#EAECF0]">Нууцлал</li>
+                    <li className="text-[#EAECF0]">Ёookie</li>
+                </ul>
+            </div>
         </div>
     );
 };

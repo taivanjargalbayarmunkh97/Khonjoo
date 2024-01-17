@@ -1,7 +1,7 @@
 const Index = () => {
     let arr = [0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
     return (
-        <div className="bg-[#050514] h-[532px] flex flex-col items-center justify-center relative py-[80px]">
+        <div className="bg-[#050514] h-[532px] flex flex-col items-center justify-center relative py-[80px] w-[100%]">
             <p className="text-[#FFF] text-[32px] font-[400] leading-[40px] tracking-[-0.64px] ">
                 Hottest <span className=" text-[#FFF] text-[32px] font-[700] leading-[44px] tracking-[-0.64px]">Influencers</span>
             </p>

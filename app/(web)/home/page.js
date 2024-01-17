@@ -4,7 +4,7 @@ import Discount from '@/module/home/components/discount';
 import TopAgency from '@/module/home/components/topAgency';
 import Influencers from '@/module/home/components/influencers';
 import Works from '@/module/home/components/works';
-import Blogs from '@/module/home/components/blog';
+import Blogs from '@/module/home/components/blogs';
 
 const Home = () => {
     return (
