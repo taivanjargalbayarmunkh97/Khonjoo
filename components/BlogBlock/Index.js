@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 const Index = ({ shadow }) => {
     return (
-        <div className={`${shadow} w-[100%] h-[100%]`}>
+        <div className={`${shadow} w-[100%]  hover:shadow-2xl`}>
             <img src="/assets/photo/image.png" alt="photo" style={{ width: '100%', height: '50%', objectFit: 'cover' }} />
             <div className="py-[20px] mx-[16px]">
                 <div className=" w-[161px] h-[30px]">

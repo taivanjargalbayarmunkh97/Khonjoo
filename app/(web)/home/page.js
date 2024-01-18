@@ -19,7 +19,9 @@ const News = () => {
                 <TopAgency />
                 <Influencers />
                 <Works />
-                <Blogs />
+                <div className="mb-[64px]">
+                    <Blogs />
+                </div>
             </HomeLayout>
         </>
     );
