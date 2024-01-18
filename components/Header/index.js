@@ -22,7 +22,7 @@ const Index = () => {
                             </Link>
                         </div>
                         <div className="p-[8px]">
-                            <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
+                            <Link href={route.agency} className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Agencies
                             </Link>
                         </div>
@@ -42,7 +42,7 @@ const Index = () => {
                             </Link>
                         </div>
                         <div className="p-[8px]">
-                            <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
+                            <Link href={route.events} className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Events
                             </Link>
                         </div>
