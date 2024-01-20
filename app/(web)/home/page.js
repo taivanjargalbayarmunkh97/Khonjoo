@@ -5,6 +5,7 @@ import TopAgency from '@/module/home/template/topAgency';
 import Influencers from '@/module/home/template/influencers';
 import Works from '@/module/home/template/works';
 import Blogs from '@/module/home/template/blogs';
+import Hottest from '@/module/home/template/hottest/index';
 import Hero from '@/components/Hero';
 
 const News = () => {
@@ -19,6 +20,9 @@ const News = () => {
                 <TopAgency />
                 <Influencers />
                 <Works />
+                <div className="w-[100vw] relative top-[-123px]">
+                    <Hottest />
+                </div>
                 <div className="mb-[64px]">
                     <Blogs />
                 </div>

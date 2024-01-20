@@ -4,7 +4,7 @@ import route from '@/route/index';
 import Image from 'next/image';
 const Index = () => {
     return (
-        <header className="bg-[#ffffff] w-[100%] fixed z-[99] flex items-center justify-center">
+        <header className="bg-[#ffffff] w-[100%] fixed z-[999] flex items-center justify-center">
             <nav className="flex h-[72px] items-center w-[80%] justify-between" aria-label="Global">
                 <div className="flex">
                     <div className=" mr-[32px] w-[154px] h-[44px]">
@@ -27,7 +27,7 @@ const Index = () => {
                             </Link>
                         </div>
                         <div className="p-[8px]">
-                            <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
+                            <Link href={route.channels} className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Channels
                             </Link>
                         </div>
@@ -37,7 +37,7 @@ const Index = () => {
                             </Link>
                         </div>
                         <div className="p-[8px]">
-                            <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
+                            <Link href={route.resources} className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Resources
                             </Link>
                         </div>
@@ -47,7 +47,7 @@ const Index = () => {
                             </Link>
                         </div>
                         <div className="p-[8px]">
-                            <Link href="#" className="text-[#050514] text-[15px] font-[500] leading-[24px]">
+                            <Link href={route.marketers} className="text-[#050514] text-[15px] font-[500] leading-[24px]">
                                 Marketers
                             </Link>
                         </div>
@@ -66,7 +66,7 @@ const Index = () => {
                     </div>
                     <div className="px-[16px] py-[10px] bg-[#FD3D80] h-[40px]">
                         <a href={route.signIn} className="text-[14px] text-[#FFFFFF] font-[600] leading-[20px]">
-                            Бүртгүүлэх
+                            Нэвтрэх
                         </a>
                     </div>
                 </div>

@@ -3,6 +3,9 @@ export default {
     campaigns: '/campaigns',
     news: '/news',
     agency: '/agency',
+    channels: '/channels',
+    marketers: '/marketers',
+    resources: '/resources',
     events: '/events',
     signIn: 'auth/signIn', //Нэвтрэх
     signUp: '/signUp', //бүртгүүлэх

@@ -31,9 +31,9 @@ const Index = () => {
             <div className="relative">
                 <Hero imageUrl={'/assets/photo/blogs.png'} />
                 <div className="absolute top-[40%] left-[20%]">
-                    <p className="text-[12px] font-[500] leading-[18px] text-[#8557F4] mb-[12px]">Blogs</p>
+                    <p className="text-[12px] font-[500] leading-[18px] text-[#8557F4] mb-[12px]">Channels</p>
                     <p className="text-[36px] font-[500] leading-[40px] tracking-[-1.44px] text-[#050514] mb-[24px]">
-                        Hottest <span className="text-[36px] font-[700] leading-[40px] tracking-[-1.44px] text-[#050514]">Нийтлэлүүд</span>
+                        Hottest <span className="text-[36px] font-[700] leading-[40px] tracking-[-1.44px] text-[#050514]">Channels</span>
                     </p>
                     <p className="text-[16px] font-[400] leading-[28px] text-[#475467]">
                         Хамгийн сүүлийн үеийн салбарын мэдээ, ярилцлага, технологи, нөөц.
@@ -81,15 +81,3 @@ const Index = () => {
     );
 };
 export default Index;
-
-//   <div
-//       key={role.id}
-//       className={`flex items-center px-[8px] py-[8px] cursor-pointer hover:bg-[#FFF] ${
-//           activeRole === role.id && 'shadow-sm rounded-[6px] bg-[#FFF]'
-//       }`}
-//       onClick={() => {
-//           setActiveRole(role.id);
-//       }}
-//   >
-//       <p className="text-[14px] font-[600] leading-[20px]">{role.name}</p>
-//   </div>;

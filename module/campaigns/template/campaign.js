@@ -1,7 +1,9 @@
 'use client';
 import WorksBlock from '@/components/WorkBlock';
 import route from '@/route';
+import { Pagination } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
+
 const Index = () => {
     const router = useRouter();
     let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
@@ -14,6 +16,7 @@ const Index = () => {
                     </div>
                 );
             })}
+            <Pagination isCompact showControls total={100} initialPage={1} variant="light" size="lg" color="primary" />
         </div>
     );
 };
