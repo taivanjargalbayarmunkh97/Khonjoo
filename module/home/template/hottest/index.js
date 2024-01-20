@@ -13,7 +13,7 @@ const Index = () => {
         <div className="h-[100%]">
             <img src="/assets/photo/hottest.png" />
             <div>
-                <div className="">
+                {/* <div className="">
                     <p>
                         Hottest<span>Channel</span>
                     </p>
@@ -41,7 +41,7 @@ const Index = () => {
                     <p>
                         Hottest<span>Marketers</span>
                     </p>
-                </div>
+                </div> */}
             </div>
         </div>
     );
