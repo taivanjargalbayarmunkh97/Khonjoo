@@ -69,7 +69,7 @@ const Index = () => {
                 <div className="flex flex-wrap w-[100%] gap-x-[32px] gap-y-[40px] mt-[40px] justify-center">
                     {arr?.map((i) => {
                         return (
-                            <div className="w-[31.42%] shadow-md hover:shadow-xl" key={i} onClick={() => router.push(`${route.news}/${1}`)}>
+                            <div className="w-[31.42%] shadow-md hover:shadow-xl" key={i} onClick={() => router.push(`${route.channels}/${1}`)}>
                                 <BlogBlock />
                             </div>
                         );

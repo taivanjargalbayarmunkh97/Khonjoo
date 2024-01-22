@@ -1,28 +1,39 @@
-import Blogs from '@/module/home/template/blogs';
+import DetailCampaigns from '@/components/Detail/detailBlocks';
+import DetailActivity from '@/components/Detail/detailActivity';
+import DetailAds from '@/components/Detail/detailAds';
+
 const Index = () => {
     return (
-        <>
-            <div className="mt-[113px] w-[80%]">
-                <div className="flex flex-col items-center justify-center">
-                    <p className="text-[#8557F4] text-[12px] font-[500] leading-[18px] mb-[15px]">2022.01.20-нд нийтлэгдсэн</p>
-                    <p className="text-[#101828] text-[40px] font-[700] leading-[48px] mb-[24px] tracking-[-0.8px]">UX тойм танилцуулга</p>
-                    <p className="text-[#475467] text-[18px] font-[400] leading-[26px] mb-[24px] ">
-                        Хамтран ажиллагсдаа гайхшруулж, менежерүүдийнхээ сэтгэлийг хөдөлгөх сэтгэл татам илтгэлүүдийг хэрхэн бүтээх вэ?
-                    </p>
-                    <div className="bg-[#FFF] py-[4px] pl-[4px] border-[#F5F6FF] border-[3px] border-[solid] rounded-[16px] w-[76px] h-[30px] text-center mb-[32px]">
-                        <p className="text-[#8557F4] font-[500] text-[12px]">Дизайн</p>
+        <div className=" mt-[97px] w-[80%]">
+            <div className="flex gap-[30px]">
+                <div className="border-[1px] border-[solid] border-[#EAECF0] shadow-xs w-[70%] h-[80%]">
+                    <div className="p-[20px]">
+                        <p className="text-[40px] text-[#101828] font-[600] leading-[60px] tracking-[-0.8px] mb-[20px]">UnAwkward</p>
+                        <p className="text-[16px] font-[400] leading-[24px] text-[#475467]">
+                            Хамтран ажиллагсдаа гайхшруулж, менежерүүдийнхээ сэтгэлийг хөдөлгөх сэтгэл татам илтгэлүүдийг хэрхэн бүтээх вэ?
+                        </p>
                     </div>
+                    <div className=" w-[100%]">
+                        <iframe
+                            width="100%"
+                            height="432px"
+                            src="https://www.youtube.com/embed/U_w0MF1gUgM?controls=0&rel=0"
+                            frameBorder="0"
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer"
+                        ></iframe>
+                    </div>
+                    <DetailActivity />
                 </div>
-                <div className="mb-[40px] w-[100%] flex justify-center items-center">
-                    <img src="/assets/photo/blog.png" />
+                <div className="border-[1px] border-[solid] border-[#EAECF0] shadow-xs w-[30%] p-[20px] flex flex-col gap-[20px]">
+                    <DetailAds />
                 </div>
             </div>
-            <div className="flex justify-center bg-[#F9FAFB]">
-                <div className="flex w-[80%] flex-col items-center justify-center mb-[64px]">
-                    <Blogs fromDetail="fromDetail" />
-                </div>
-            </div>
-        </>
+            {/* <div className="mt-[24px] w-[100%] py-[48px]">
+                <DetailCampaigns />
+            </div> */}
+        </div>
     );
 };
 export default Index;

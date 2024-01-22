@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import route from '@/route/index';
-import Image from 'next/image';
 const Index = () => {
     return (
         <header className="bg-[#ffffff] w-[100%] fixed z-[999] flex items-center justify-center">
