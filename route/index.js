@@ -7,6 +7,7 @@ export default {
     marketers: '/marketers',
     resources: '/resources',
     events: '/events',
+    myAccount: 'myAccount',
     signIn: 'auth/signIn', //Нэвтрэх
     signUp: '/signUp', //бүртгүүлэх
 };

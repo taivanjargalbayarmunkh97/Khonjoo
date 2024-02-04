@@ -17,45 +17,24 @@ const roles = [
 
 const Page = () => {
     const [activeRole, setActiveRole] = useState('1');
-    const isClient = typeof window !== 'undefined';
     const router = useRouter();
-    const storageAvailable = isClient && typeof window.localStorage !== 'undefined';
-    const storedWidth = storageAvailable ? localStorage.getItem('windowWidth') : null;
-    const [windowWidth, setWindowWidth] = useState(storedWidth ? parseInt(storedWidth, 10) : null);
-
-    useEffect(() => {
-        if (storageAvailable) {
-            const handleResize = () => {
-                const newWidth = window.innerWidth;
-                setWindowWidth(newWidth);
-                localStorage.setItem('windowWidth', newWidth.toString());
-            };
-
-            window.addEventListener('resize', handleResize);
-
-            return () => {
-                window.removeEventListener('resize', handleResize);
-            };
-        }
-    }, [storageAvailable]);
-
-    const imagePath = windowWidth <= 767 ? '/assets/photo/Content.png' : '/assets/photo/login.png';
 
     return (
         <div className="flex max-h-[100vh] h-[100%] max-md:flex-col-reverse max-md:overflow-hidden">
             <div className="w-[46%] flex relative items-center h-[100%] max-lg:w-[62%] max-md:w-[100%] max-md:flex-col">
                 <div className={`top-[10px] left-[32px] absolute max-md:top-[0] max-md:left-[16px] max-md:relative max-md:self-stretch`}>
-                    <img src="/assets/icons/mainLogo.svg" className="md:w-[80%] md:h-[80%]" width={154} />
+                    <img
+                        src="/assets/icons/mainLogo.svg"
+                        alt="logo"
+                        width={154}
+                        className="cursor-pointer"
+                        onClick={() => {
+                            router.push(route.home);
+                        }}
+                    />
                 </div>
-                {/* <button
-                    className="py-[5px] px-[10px] bg-[#FD3D80] text-center shadow-xs text-[16px] font-[600] text-[#FFF] leading-[24px] hover:bg-[#f6f2f2] hover:text-[#FD3D80] absolute right-[8px] top-[10px] max-md:top-[0]"
-                    onClick={() => {
-                        router.push(route.home);
-                    }}
-                >
-                    Буцах
-                </button> */}
-                <div className="flex w-[100%] items-center justify-center h-[100%] max-md:px-[16px] max-md:mt-[24px]  max-md:items-start">
+
+                <div className="flex w-[100%] items-center justify-center h-[100vh] max-md:px-[16px] max-md:mt-[24px]  max-md:items-start">
                     <div className="p-[20px] w-[70%] flex flex-col gap-[24px] border-[1px] border-[solid] border-[#EAECF0] rounded-[8px] max-md:p-[0px] max-md:border-[0px] max-md:w-[100%]">
                         <div className="w-[100%]">
                             <p className="text-[24px] mb-[12px] font-[600] leading-[28px] tracking-[-0.48px]">Бүртгүүлэх</p>
@@ -127,7 +106,11 @@ const Page = () => {
                 </div>
             </div>
             <div className="w-[54%] max-lg:w-[38%] max-md:w-[100%] max-md:pb-[40px]">
-                <img src={imagePath} alt="Login" style={{ objectFit: 'cover', height: '100%', width: '100%', objectPosition: '50% 0%' }} />
+                <img
+                    src={'/assets/photo/login.png'}
+                    alt="Login"
+                    style={{ objectFit: 'cover', height: '100%', width: '100%', objectPosition: '50% 0%' }}
+                />
             </div>
         </div>
     );

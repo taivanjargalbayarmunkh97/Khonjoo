@@ -7,8 +7,8 @@ const DetailAds = () => {
             <div className=" w-[100%]">
                 <iframe
                     width="100%"
-                    height="240px"
-                    src="https://www.youtube.com/embed/0B359W0-VCM?controls=0&rel=0"
+                    height="300px"
+                    src="https://www.youtube.com/embed/3yiHZWr6Izc?controls=0&rel=0"
                     frameBorder="0"
                     allowFullScreen
                     loading="lazy"
@@ -18,8 +18,8 @@ const DetailAds = () => {
             <div className=" w-[100%]">
                 <iframe
                     width="100%"
-                    height="240px"
-                    src="https://www.youtube.com/embed/0B359W0-VCM?controls=0&rel=0"
+                    height="300px"
+                    src="https://www.youtube.com/embed/3yiHZWr6Izc?controls=0&rel=0"
                     frameBorder="0"
                     allowFullScreen
                     loading="lazy"
@@ -29,8 +29,8 @@ const DetailAds = () => {
             <div className=" w-[100%]">
                 <iframe
                     width="100%"
-                    height="240px"
-                    src="https://www.youtube.com/embed/0B359W0-VCM?controls=0&rel=0"
+                    height="300px"
+                    src="https://www.youtube.com/embed/3yiHZWr6Izc?controls=0&rel=0"
                     frameBorder="0"
                     allowFullScreen
                     loading="lazy"

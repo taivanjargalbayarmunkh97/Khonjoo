@@ -9,15 +9,15 @@ const reducer = (state, action) => {
         case 'SET_USER':
             return {
                 ...state,
-                data: action.payload,
+                user: action.payload,
                 isLoggedIn: true,
             };
+
         case 'IS_LOGGED_IN':
             return {
                 ...state,
                 userToken: action.payload.token,
                 isLoggedIn: action.payload.isLoggedIn,
-                user: action.payload.user,
             };
 
         case 'SIGN_OUT':

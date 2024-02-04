@@ -1,36 +1,40 @@
-import { useReducer, useMemo } from 'react';
+import { useReducer, useMemo, useEffect } from 'react';
 import AuthReducer from '@/context/auth/authReducer';
 import axios from 'axios';
-import { setcookie, getcookie, removeCookie } from '@/context/auth/utils';
+import { setcookie, getcookie, removeCookie } from '@/service/utils';
+import { BASE_URL } from './path';
 
 export const Api = () => {
     const initialState = {
         userToken: null,
         isLoggedIn: false,
-        user: {},
-        data: null,
+        user: null,
     };
+
     const instance = axios.create({
+        baseURL: BASE_URL,
         timeout: 30000,
     });
 
     const [state, dispatch] = useReducer(AuthReducer, initialState);
+    useEffect(() => {
+        const tk = getcookie('token');
+        if (tk) {
+            handlers.getUserData();
+            dispatch({ type: 'IS_LOGGED_IN', payload: { isLoggedIn: true } });
+        }
+    }, [state.userToken]);
 
     const handlers = useMemo(
         () => ({
             //хэрэглэгчийн нэвтрэх
             signIn: async (data) => {
                 let payload = {
-                    token: data?.token,
+                    token: data,
                     isLoggedIn: true,
-                    user: data,
                 };
                 dispatch({ type: 'IS_LOGGED_IN', payload });
-            },
-
-            setUser: async (data) => {
                 setcookie(data);
-                dispatch({ type: 'SET_USER', payload: data });
             },
 
             //хэрэглэгч гарах
@@ -38,30 +42,59 @@ export const Api = () => {
                 removeCookie();
                 dispatch({ type: 'SIGN_OUT' });
             },
+
             stateDynamicUpdate: (obj) => {
-                //   payload = {
-                //    type:obj.type
-                //    value:obj.value
-                //  }
                 dispatch({ type: 'DYNAMIC_UPDATE', payload: obj });
             },
-            getTokenState: () => {
-                return `Authorization : Bearer ${state.data?.token?.access_token}`;
+
+            getUserData: () => {
+                let data = getcookie('token');
+                if (typeof data === 'string') {
+                    let dataParsed = JSON.parse(data);
+                    axios
+                        .get(
+                            `${BASE_URL}/users/me`,
+
+                            {
+                                headers: {
+                                    Authorization: `Bearer ${dataParsed}`,
+                                },
+                            }
+                        )
+                        .then((res) => {
+                            if (res?.status === 200 && res?.data?.response_code === 200) {
+                                dispatch({ type: 'SET_USER', payload: res?.data?.data });
+                            } else {
+                                removeCookie();
+                            }
+                        })
+                        .catch((err) => {
+                            removeCookie();
+                            return;
+                        });
+                } else {
+                    removeCookie();
+                }
             },
+
             GET: async (url, isToken = false, contentType = 'application/json', responseType = 'json') => {
                 try {
-                    let response = await instance.get(BASE_URL + url, {
-                        headers: {
-                            ...(isToken && getTokenState()),
-                            'Content-Type': contentType,
-                            'X-API-KEY': 'DUU4zmfTw27Xk1l5bMKgN5F7JXGxy7on',
-                        },
-                        responseType,
-                    });
-                    return response;
+                    return instance.get(
+                        url,
+                        isToken
+                            ? {
+                                  headers: {
+                                      Authorization: `Bearer ${state.userToken}`,
+                                      'Content-Type': contentType,
+                                  },
+                                  responseType,
+                              }
+                            : ''
+                    );
                 } catch (e) {
                     if (e?.response?.status === 401) {
                         handlers.logOut();
+                        toastExpireAccess();
                     }
                     return e;
                 }
@@ -69,20 +102,84 @@ export const Api = () => {
 
             POST: async (url, isToken = false, data, contentType = 'application/json', responseType = 'json') => {
                 try {
-                    let response = await instance.post(BASE_URL + url, data, {
-                        headers: {
-                            'Content-Type': contentType,
-                            'X-API-KEY': 'DUU4zmfTw27Xk1l5bMKgN5F7JXGxy7on',
-                        },
-                        responseType,
-                    });
-
-                    return response;
+                    let response = await instance.post(
+                        url,
+                        data,
+                        isToken
+                            ? {
+                                  headers: {
+                                      Authorization: `Bearer ${state.userToken}`,
+                                      'Content-Type': contentType,
+                                  },
+                                  responseType,
+                              }
+                            : ''
+                    );
+                    if (response?.status === 200 && response?.data) {
+                        return response.data;
+                    }
                 } catch (e) {
                     if (e?.response?.status === 401) {
                         handlers.logOut();
+                        toastExpireAccess();
                     }
-                    return e?.response?.data;
+                    const error = new Error();
+                    error.status = e?.response?.status;
+                    throw error;
+                }
+            },
+
+            PUT: async (url, isToken = false, data) => {
+                try {
+                    let response = await instance.put(
+                        url,
+                        data,
+                        isToken
+                            ? {
+                                  headers: {
+                                      Authorization: `Bearer ${state.userToken}`,
+                                  },
+                              }
+                            : ''
+                    );
+                    if (response?.status === 200 && response?.data) {
+                        return response.data;
+                    }
+                } catch (e) {
+                    if (e?.response?.status === 401) {
+                        handlers.logOut();
+                        toastExpireAccess();
+                    }
+                    const error = new Error();
+                    error.status = e?.response?.status;
+                    throw error;
+                }
+            },
+
+            DELETE: async (url, isToken = false, responseType = 'json') => {
+                try {
+                    let response = await instance.delete(
+                        url,
+                        isToken
+                            ? {
+                                  headers: {
+                                      Authorization: `Bearer ${state.userToken}`,
+                                  },
+                                  responseType,
+                              }
+                            : ''
+                    );
+                    if (response?.status === 200 && response?.data) {
+                        return response.data;
+                    }
+                } catch (e) {
+                    if (e?.response?.status === 401) {
+                        handlers.logOut();
+                        toastExpireAccess();
+                    }
+                    const error = new Error();
+                    error.status = e?.response?.status;
+                    throw error;
                 }
             },
         }),

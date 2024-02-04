@@ -17,7 +17,7 @@ const Index = () => {
                         <iframe
                             width="100%"
                             height="432px"
-                            src="https://www.youtube.com/embed/U_w0MF1gUgM?controls=0&rel=0"
+                            src="https://www.youtube.com/embed/3yiHZWr6Izc?controls=0&rel=0"
                             frameBorder="0"
                             allowFullScreen
                             loading="lazy"
