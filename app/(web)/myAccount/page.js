@@ -1,6 +1,6 @@
 import MyAccountLayout from '@/module/myAccount/layout/main';
 import Hero from '@/components/Hero';
-import { Tabs } from '@nextui-org/react';
+import Tabs from '@/module/myAccount/template/Index';
 const Page = () => {
     return (
         <>
@@ -11,9 +11,7 @@ const Page = () => {
                 </div>
             </div>
             <MyAccountLayout>
-                <div>
-                    <p>my account</p>
-                </div>
+                <Tabs />
             </MyAccountLayout>
         </>
     );
