@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 //next
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 //route
 import route from '@/route';
 //
@@ -102,7 +101,7 @@ const Page = () => {
                     </div>
                 </div>
                 <div className="bottom-[10px] left-[32px] absolute max-md:hidden">
-                    <p className="text-[14px] font-[400] leading-[20px]">Бүх эрх хуулиар хамгаалагдсан © 2077.</p>
+                    <p className="text-[14px] font-[400] leading-[20px]">Бүх эрх хуулиар хамгаалагдсан © 2024.</p>
                 </div>
             </div>
             <div className="w-[54%] max-lg:w-[38%] max-md:w-[100%] max-md:pb-[40px]">

@@ -1,25 +1,22 @@
 'use client';
-import { Tabs, Tab, Button, Divider } from '@nextui-org/react';
-const Index = () => {
+import { Button } from '@nextui-org/react';
+
+const Index = ({ TabsArray, setSelected, selected }) => {
     return (
-        <div className="w-[25%] flex flex-col">
-            <Button radius="none" className="bg-[#FFFFFFF] text-[black]">
-                Dashboard
-            </Button>
-            <Divider />
-            <Button radius="none">Orders</Button>
-            <Divider />
-            <Button radius="none">Downloads</Button>
-            <Divider />
-            <Button radius="none">Addresses</Button>
-            <Divider />
-            <Button radius="none">Account details</Button>
-            <Divider />
-            <Button radius="none">Whishlist</Button>
-            <Divider />
-            <Button radius="none">My Event</Button>
-            <Divider />
-            <Button radius="none">Logout</Button>
+        <div className="w-[20%]">
+            {TabsArray.map((tab, index) => {
+                return (
+                    <div className={`mb-[10px] shadow-sm ${selected.title === tab?.title ? 'bg-black text-white' : 'bg-white'}`} key={index}>
+                        <Button
+                            radius="none"
+                            className={`${selected?.title === tab?.title ? 'bg-black text-white' : 'bg-white'} w-[100%]`}
+                            onClick={() => setSelected(tab)}
+                        >
+                            {tab?.title}
+                        </Button>
+                    </div>
+                );
+            })}
         </div>
     );
 };
